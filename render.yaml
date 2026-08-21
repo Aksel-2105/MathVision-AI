@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: mathvision-ai
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile.production
+    dockerContext: .
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mathvision-db
+          property: connectionString
+      - key: MAX_UPLOAD_SIZE_BYTES
+        value: "10485760"
+      - key: MAX_IMAGE_PIXELS
+        value: "25000000"
+      - key: RETENTION_HOURS
+        value: "24"
+
+databases:
+  - name: mathvision-db
+    plan: free
