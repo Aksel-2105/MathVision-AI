@@ -52,6 +52,15 @@ mathvision-ai/
 ```
 
 ## Local setup
+## 🚀 Live Demo
+Try the live application here:
+🔗 **[MathVision AI Live Application](https://mathvision-ai-orao.onrender.com)**
+
+> ℹ️ **Note on First Load (Cold Start):**
+> This application is hosted on Render's free tier. If inactive for a while, the instance will spin down.
+> Please allow **30–50 seconds** for the initial load. Subsequent requests will process normally.
+
+Or
 
 1. Copy `.env.example` to `.env` and adjust values if needed.
 2. Install backend dependencies with `python -m pip install -e backend[dev]`.
